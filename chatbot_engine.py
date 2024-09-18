@@ -53,6 +53,10 @@ os.environ['LANGCHAIN_PROJECT'] = "LangSmith-test"
 
 
 def create_index() -> VectorStoreIndexWrapper:
+
+    import nltk
+    nltk.download('punkt')
+    
     # テキスト分割機能の設定
     splitter = CharacterTextSplitter(separator="。", chunk_size=100, chunk_overlap=0)
 
